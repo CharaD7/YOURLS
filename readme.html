@@ -242,8 +242,11 @@
 <div id="Container">
 
 	<!-- Title -->
+	<header role="banner">
 	<h1><a href="http://yourls.org/">YOURLS: <span>Y</span>our <span>O</span>wn <span>URL</span> <span>S</span>hortener</a></h1>
-
+	</header>
+	
+	<main role="main">
 	<!-- Tabs -->
 	<ul id="Tabs">
 		<li id="MoreTab" class="Tab"><a href="#More" onclick="toggle(this);">More</a></li>
@@ -339,6 +342,7 @@
 				<li>Create a new database (see <a href="#Config" onclick="toggle(this);">Configuration</a> &ndash; you can also use an existing one)</li>
 				<li>Point your browser to <code>http://your-own-domain-here.com/admin/</code></li>
 			</ol>
+			<a href="https://www.rosehosting.com/blog/how-to-install-yourls-on-ubuntu-14-04/">How to Install YOURLS on Ubuntu 14.04</a> (Unoficial guide)
 			
 			<h2 id="upgrade">Upgrade</h2>
 			<ol>
@@ -595,7 +599,7 @@ echo $data->longurl;</tt></pre>
 				<li>A server with <strong>mod_rewrite</strong> enabled</li>
 				<li>At least <strong>PHP 5.2</strong></li>
 				<li>At least <strong>MYSQL 4.1</strong></li>
-				<li><em>Note</em>: YOURLS can also run on <a href="https://github.com/YOURLS/YOURLS/wiki/Nginx-configuration">Nginx</a> and <a href="http://www.ututech.com/2010/10/configuring-yourls-to-work-with-cherokee-web-server/">Cherokee</a></li>
+				<li><em>Note</em>: YOURLS can also run on <a href="https://github.com/YOURLS/YOURLS/wiki/Nginx-configuration">Nginx</a> and <a href="https://github.com/lylebrown/YOURLS-Cherokee">Cherokee</a></li>
 			</ol>
 
 			<h3 id="recommendation">Server recommendations</h3>
@@ -635,6 +639,12 @@ echo $data->longurl;</tt></pre>
 				<li>Make sure <strong>mod_rewrite</strong> is enabled with your Apache server</li>
 				<li>Make sure your .htaccess file looks like <a href="http://yourls.org/htaccess">this one</a></li>
 				<li>Eventually, check your server Apache configuration allows use of .htaccess (<tt>AllowOverride All</tt> directive, ask your server admin)</li>
+			</ul>
+			
+			<h3 id="sequential">Random versus sequential short URLs</h3>
+			<ul>
+				<li>Out of the box, YOURLS generates sequential short URLS (ie <code>ab31</code>, then <code>ab32</code> and so on)</li>
+				<li>If you prefer random short URLs (ie <code>j3kz1</code> then <code>13hz7</code> like Bitly does), just activate the plugin that comes with YOURLS.</li>
 			</ul>
 			
 			<h3 id="noindex">There is no index page at the root of the install</h3>
@@ -746,10 +756,10 @@ echo $data->longurl;</tt></pre>
 				<li id="mac"><a href="http://timi.im/app/">Mac Client</a><br/>
 				Simple app to have a global keyboard shortcut send a link to YOURLS</li>
 
-				<li id="android">Android: <a href="https://play.google.com/store/apps/details?id=com.mndroid.apps.urly">URLy</a> and <a href="https://play.google.com/store/apps/details?id=de.keineantwort.android.urlshortener">URL Shortener</a><br/>
+				<li id="android">Android: <a href="https://play.google.com/store/apps/details?id=de.mateware.ayourls">aYourls</a>, <a href="https://play.google.com/store/apps/details?id=com.mndroid.apps.urly">URLy</a> and <a href="https://play.google.com/store/apps/details?id=de.keineantwort.android.urlshortener">URL Shortener</a><br/>
 				Android apps that plays nice with YOURLS</li>
 
-				<li id="iphone">iOS: <a href="http://shorttailapp.com/">ShortTail for YOURLS</a>, <a href="http://itunes.apple.com/us/app/clicklytics-track-clicks-on/id444008024?mt=8">Clicklytics</a> and <a href="https://itunes.apple.com/us/app/myyourls/id661934890?mt=8">myYOURLS</a><br/>
+				<li id="iphone">iOS: <a href="http://adamdehaven.com/blog/2015/05/shorttail-for-yourls-an-elegant-yourls-client-for-iphone/">ShortTail for YOURLS</a>, <a href="http://itunes.apple.com/us/app/clicklytics-track-clicks-on/id444008024?mt=8">Clicklytics</a> and <a href="https://itunes.apple.com/us/app/myyourls/id661934890?mt=8">myYOURLS</a><br/>
 				Apps to use YOURLS on iPhones and iPads</li>
 
 				<li id="chrome"><a href="https://github.com/ukoms/Chrourls">Chrourls</a><br/>
@@ -768,7 +778,10 @@ echo $data->longurl;</tt></pre>
 				<li><a href="https://github.com/tomslominski/infinity-squared">Infinity Squared</a><br/>
 				&#8734;&sup2; is a public page theme for YOURLS to help you design your own public interface</li>
 				
-				<li><a href="https://github.com/johngirvin/yourls-index-page">John Girvin's page</a><br/>
+				<li><a href="https://github.com/Flynntes/Sleeky">Sleeky</a><br/>
+				Sleeky is another public page theme for YOURLS</li>
+				
+				<li><a href="https://github.com/ScottHelme/yourls-index-page">Scott Helme's page</a><br/>
 				Example index page listing all the URLs held in a YOURLS database</li>
 				
 				<li><a href="http://screenr.com/nTs">http://screenr.com/nTs</a><br/>
@@ -804,11 +817,14 @@ echo $data->longurl;</tt></pre>
 
 				<li><a href="http://ithem.es/">http://ithem.es/</a> by <a href="http://www.ithemes.com/">iThemes</a></li>
 				
+				<li><a href="https://rho.st/">https://rho.st/</a> by <a href="https://www.rosehosting.com/">RoseHosting.com</a></li>
+				
 			</ul>
 				
 				
 		</div>
 	</div> <!-- content -->
+	</main>
 </div> <!-- container -->
 
 <div id="fade"></div>

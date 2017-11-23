@@ -212,7 +212,7 @@ if ( isset( $_GET['u'] ) or isset( $_GET['up'] ) ) {
 
 			case 'tumblr':
 				// share with Tumblr
-				$destination = sprintf( "http://www.tumblr.com/share?v=3&u=%s&t=%s&s=%s", urlencode( $return['shorturl'] ), urlencode( $title ), urlencode( $text ) );
+				$destination = sprintf( "https://www.tumblr.com/share?v=3&u=%s&t=%s&s=%s", urlencode( $return['shorturl'] ), urlencode( $title ), urlencode( $text ) );
 				yourls_redirect( $destination, 303 );
 
 				// Deal with the case when redirection failed:
@@ -286,7 +286,7 @@ if ( !$is_bookmark ) { ?>
 			echo ", " . sprintf( yourls_n( 'counting <strong>1</strong> click', 'counting <strong>%s</strong> clicks', $total_items_clicks ), yourls_number_format_i18n( $total_items_clicks ) );
 	?>.</p>
 <?php } ?>
-<p><?php printf( yourls__( 'Overall, tracking <strong class="increment">%1$s</strong> links, <strong>%2$s</strong> clicks, and counting!' ), yourls_number_format_i18n( $total_urls ), yourls_number_format_i18n( $total_clicks ) ); ?></p>
+<p id="overall_tracking"><?php printf( yourls__( 'Overall, tracking <strong class="increment">%1$s</strong> links, <strong>%2$s</strong> clicks, and counting!' ), yourls_number_format_i18n( $total_urls ), yourls_number_format_i18n( $total_clicks ) ); ?></p>
 <?php
 
 yourls_do_action( 'admin_page_before_form' );
